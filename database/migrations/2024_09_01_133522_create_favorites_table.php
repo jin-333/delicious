@@ -27,5 +27,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('favorites');
-    }
+        Schema::table('posts', function (Blueprint $table) {
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+          $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+    });
+   }
 };

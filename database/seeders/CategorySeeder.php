@@ -14,7 +14,20 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-            'name' => 'イタリアン'
+            ['name' => '和食'],
+            ['name' => '中華'],
+            ['name' => 'イタリアン'],
+            ['name' => 'フレンチ'],
+            ['name' => 'インド料理'],
+            ['name' => 'メキシコ料理'],
+            ['name' => 'アメリカ料理'],
+            ['name' => '韓国料理'],
+            ['name' => 'タイ料理'],
+            ['name' => 'ベトナム料理'],
+            ['name' => '肉料理'],
+            ['name' => '魚料理'],
+            ['name' => '麺料理']
+            
             ]);
         //
     }

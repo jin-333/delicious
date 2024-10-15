@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\RatingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +20,14 @@ use App\Http\Controllers\PostController;
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'index')->name('index');
     Route::get('/posts/create', [Postcontroller::class, 'create'])->name('posts.create');
+    Route::get('/posts/{post}/edit',[PostController::class, 'edit'])->name('edit');
+    Route::put('/posts/{post}', [PostController::class,'update'])->name('update');
     Route::post('/posts', [Postcontroller::class, 'store'])->name('posts.store');
+    Route::post('/bookmarks/{post}', [BookmarkController::class, 'toggle'])->name('bookmarks.toggle');
+    Route::get('/profile/bookmarks', [BookmarkController::class, 'index'])->name('profile.bookmarks');
+    Route::post('/posts/comments', [CommentController::class, 'store'])->name('comment');
+    Route::post('/posts/{post}/ratings', [RatingController::class, 'store'])->name('ratings.store');
+    Route::delete('/posts/{post}', 'delete')->name('delete');
     Route::get('/posts/{post}', [Postcontroller::class, 'show'])->name('posts.show');
 });
 

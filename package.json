@@ -3,6 +3,7 @@
     "type": "module",
     "engines": { "node": "16.x" },
     "scripts": {
+    "start": "node index.js",
         "dev": "vite",
         "build": "vite build",
         "heroku-postbuild": "npm run build"

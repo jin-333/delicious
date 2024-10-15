@@ -1,15 +1,6 @@
 import './bootstrap';
-import './comment';
-
 import Alpine from 'alpinejs';
-
+import './comment.js';
 window.Alpine = Alpine;
 
 Alpine.start();
-
-import './bootstrap';
-
-
-
-
-

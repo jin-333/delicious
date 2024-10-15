@@ -21,16 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
   .then((res) => res.json())
   .then((data) => {
    let div_element = document.createElement('div');
-   div_element.textContent = '投稿者:'
-   let strong_element = document.createElement('strong')
-   strong_element.textContent = data.user_name
-   div_element.appendChild(strong_element)
-   let p_element = document.createElement('p')
-   p_element.textContent = data.comment_contents
-   let small_element = document.createElement('small')
-   small_element.textContent = data.created_at
+   div_element.textContent = '投稿者:';
+   let strong_element = document.createElement('strong');
+   strong_element.textContent = data.user_name;
+   div_element.appendChild(strong_element);
+   let p_element = document.createElement('p');
+   p_element.textContent = data.comment_contents;
+   let small_element = document.createElement('small');
+   small_element.textContent = data.created_at;
    
-  commentList.prepend(div_element, p_element, small_element) 
-  })
- })
+  commentList.prepend(div_element, p_element, small_element) ;
+  });
+ });
 })
